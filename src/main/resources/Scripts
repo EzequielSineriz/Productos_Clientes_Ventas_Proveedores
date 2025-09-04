@@ -1,0 +1,142 @@
+
+//Insertando 20 productos
+
+INSERT INTO Producto (id,nombre, marca, precio, stock, fecha_creacion, fecha_actualizacion, mensaje) VALUES
+(1,'Zapatillas Ultraboost', 'Adidas', 180.00, 50, '2024-09-02 16:00:00', '2024-09-02 16:00:00', 'Producto insertado por script.'),
+(2,'Zapatillas Air Max 90', 'Nike', 150.50, 75, '2024-09-02 16:00:01', '2024-09-02 16:00:01', 'Producto insertado por script.'),
+(3,'Zapatillas Classic Leather', 'Reebok', 90.00, 120, '2024-09-02 16:00:02', '2024-09-02 16:00:02', 'Producto insertado por script.'),
+(4,'Zapatillas 574', 'New Balance', 85.00, 90, '2024-09-02 16:00:03', '2024-09-02 16:00:03', 'Producto insertado por script.'),
+(5,'Zapatillas Old Skool', 'Vans', 70.00, 150, '2024-09-02 16:00:04', '2024-09-02 16:00:04', 'Producto insertado por script.'),
+(6,'Zapatillas Chuck Taylor', 'Converse', 65.00, 200, '2024-09-02 16:00:05', '2024-09-02 16:00:05', 'Producto insertado por script.'),
+(7,'Zapatillas Gazelle', 'Adidas', 80.00, 110, '2024-09-02 16:00:06', '2024-09-02 16:00:06', 'Producto insertado por script.'),
+(8,'Zapatillas Blazer Mid', 'Nike', 100.00, 80, '2024-09-02 16:00:07', '2024-09-02 16:00:07', 'Producto insertado por script.'),
+(9,'Zapatillas Club C 85', 'Reebok', 75.00, 130, '2024-09-02 16:00:08', '2024-09-02 16:00:08', 'Producto insertado por script.'),
+(10,'Zapatillas Gel-Kayano', 'Asics', 160.00, 60, '2024-09-02 16:00:09', '2024-09-02 16:00:09', 'Producto insertado por script.'),
+(11,'Zapatillas Samba', 'Adidas', 95.00, 100, '2024-09-02 16:00:10', '2024-09-02 16:00:10', 'Producto insertado por script.'),
+(12,'Zapatillas Force 1', 'Nike', 110.00, 95, '2024-09-02 16:00:11', '2024-09-02 16:00:11', 'Producto insertado por script.'),
+(13,'Zapatillas Superstar', 'Adidas', 85.00, 140, '2024-09-02 16:00:12', '2024-09-02 16:00:12', 'Producto insertado por script.'),
+(14,'Zapatillas Stan Smith', 'Adidas', 80.00, 115, '2024-09-02 16:00:13', '2024-09-02 16:00:13', 'Producto insertado por script.'),
+(15,'Zapatillas Pegasus 38', 'Nike', 120.00, 85, '2024-09-02 16:00:14', '2024-09-02 16:00:14', 'Producto insertado por script.'),
+(16,'Zapatillas Wave Rider', 'Mizuno', 130.00, 70, '2024-09-02 16:00:15', '2024-09-02 16:00:15', 'Producto insertado por script.'),
+(17,'Zapatillas Future Rider', 'Puma', 75.00, 125, '2024-09-02 16:00:16', '2024-09-02 16:00:16', 'Producto insertado por script.'),
+(18,'Zapatillas Fresh Foam', 'New Balance', 135.00, 65, '2024-09-02 16:00:17', '2024-09-02 16:00:17', 'Producto insertado por script.'),
+(19,'Zapatillas RS-X', 'Puma', 105.00, 90, '2024-09-02 16:00:18', '2024-09-02 16:00:18', 'Producto insertado por script.'),
+(20,'Zapatillas Grand Court', 'Adidas', 60.00, 180, '2024-09-02 16:00:19', '2024-09-02 16:00:19', 'Producto insertado por script.');
+
+ --------------------------------------------------------------------------------------------------------
+
+
+//Inserto 10 clientes
+
+
+INSERT INTO Cliente (id,nombre, apellido, dni, metodo_pago) VALUES
+(1,'Juan', 'Pérez', '12345678A', 'TARJETA'),
+(2,'María', 'Gómez', '23456789B', 'EFECTIVO'),
+(3,'Carlos', 'López', '34567890C', 'MERCADOPAGO'),
+(4,'Ana', 'Rodríguez', '45678901D', 'TARJETA'),
+(5,'Pedro', 'Martínez', '56789012E', 'EFECTIVO'),
+(6,'Laura', 'Sánchez', '67890123F', 'TARJETA'),
+(7,'Jorge', 'Fernández', '78901234G', 'MERCADOPAGO'),
+(8,'Sofía', 'Ramírez', '89012345H', 'TARJETA'),
+(9,'Daniel', 'Díaz', '90123456I', 'EFECTIVO'),
+(10,'Valentina', 'Torres', '01234567J', 'TARJETA');
+
+
+
+insertar las ventas en el Postman!
+[
+    {
+        "clienteId": 1,
+        "productoIds": [1, 5, 8]
+    },
+    {
+        "clienteId": 2,
+        "productoIds": [2, 10]
+    },
+    {
+        "clienteId": 3,
+        "productoIds": [3, 4]
+    },
+    {
+        "clienteId": 4,
+        "productoIds": [6, 11, 14]
+    },
+    {
+        "clienteId": 5,
+        "productoIds": [7, 12]
+    },
+    {
+        "clienteId": 6,
+        "productoIds": [13, 15]
+    },
+    {
+        "clienteId": 7,
+        "productoIds": [16, 17]
+    },
+    {
+        "clienteId": 8,
+        "productoIds": [18]
+    },
+    {
+        "clienteId": 9,
+        "productoIds": [9, 19]
+    },
+    {
+        "clienteId": 10,
+        "productoIds": [20, 1]
+    }
+]
+ ------------------------------------------------------------------------------------------------------------------
+
+Insertando Proveedores:
+
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(1, 'Distribuidora Sur', 'Av. San Martín 123, Buenos Aires', '1122334455', '30-12345678-9', 'contacto@distsur.com', 'Bebidas', 'Transferencia', 'Lunes y Jueves', '30 días');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(2, 'Tech Import S.A.', 'Calle Mitre 456, Córdoba', '3514455667', '30-87654321-0', 'ventas@techimport.com', 'Electrónica', 'Tarjeta de crédito', 'Martes y Viernes', 'Contado');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(3, 'Alimentos Norte', 'Ruta 9 km 123, Rosario', '3412233445', '30-13579135-7', 'info@alimentosnorte.com', 'Alimentos secos', 'Cheque', 'Miércoles', '60 días');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(4, 'Ropa Max', 'Av. Libertad 999, Mendoza', '2617788990', '30-24682468-1', 'pedidos@ropamax.com', 'Indumentaria', 'Efectivo', 'Viernes', 'Contado');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(5, 'Electro Hogar', 'San Juan 321, Salta', '3875544332', '30-11223344-5', 'soporte@electrohogar.com', 'Electrodomésticos', 'Transferencia', 'Lunes', '15 días');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(6, 'Papelería Central', 'Av. Colón 1000, Córdoba', '3519988776', '30-55667788-9', 'ventas@papeleriacentral.com', 'Papelería', 'Cheque', 'Martes', '30 días');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(7, 'ConstruMax', 'Ruta 11 km 45, Santa Fe', '3423344556', '30-66778899-1', 'compras@construmax.com', 'Materiales de construcción', 'Transferencia', 'Miércoles y Viernes', '45 días');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(8, 'Farmacia Global', 'Belgrano 456, Tucumán', '3812233445', '30-99887766-4', 'farmacia@farmglobal.com', 'Medicamentos', 'Efectivo', 'Todos los días', 'Contado');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(9, 'Maderas del Sur', 'Ruta 40 km 300, Neuquén', '2994455667', '30-44332211-8', 'contacto@maderasdelsur.com', 'Maderas y muebles', 'Cheque', 'Jueves', '60 días');
+
+INSERT INTO proveedores
+(id, razon_social, direccion, telefono, cuit_ruc, email, tipo_de_productos, metodo_pago, dias_de_entrega, plazos_de_pago)
+VALUES
+(10, 'AgroCampo', 'Calle Rural 23, La Pampa', '2954455667', '30-77889900-2', 'agro@agrocampo.com', 'Insumos agropecuarios', 'Transferencia', 'Lunes y Miércoles', '30 días');

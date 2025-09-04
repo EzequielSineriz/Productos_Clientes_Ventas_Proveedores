@@ -1,0 +1,40 @@
+Obtener todos (lista)
+GET /productos
+
+Obtener por id
+GET /productos/{id}
+
+Editar producto
+PUT /productos/editar/{id}
+Body: igual al crear
+
+Eliminar producto
+DELETE /productos/eliminar/{id}
+
+Paginado básico (por defecto nombre asc)
+GET /productos/pageable?page=0&size=5
+
+Paginado genérico con orden
+GET /productos/pageable/order?page=0&size=5&sortBy=precio&direction=desc
+
+Orden por nombre (asc / desc)
+GET /productos/pageable/ordername/asc?page=0&size=5
+GET /productos/pageable/ordername/desc?page=0&size=5
+
+Buscar por nombre y/o marca (case-insensitive)
+GET /productos/buscar?nombre=zapatilla&marca=MarcaX
+(ambos params opcionales)
+
+Filtrar por rango de precio
+GET /productos/filtrar/precio?min=50&max=200
+
+Productos con stock bajo
+GET /productos/stock/bajo?limite=5 (default limite=5)
+
+Cantidad total de productos
+GET /productos/count
+
+Precio promedio
+GET /productos/precio/promedio
+
+

@@ -1,40 +1,174 @@
-Obtener todos (lista)
-GET /productos
+Productos
+Crear Producto(POST)
+http://localhost:8080/productos/crear
+(@GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;) --- SE GENERA CUANDO SE CREA EL OBJETO POR ESO NO APARECE EN EL JSON
+{
+	"nombre":"Zapatillas",
+    "marca": "Addidas",
+    "costo": 200.00,
+    "stock": 100
 
-Obtener por id
-GET /productos/{id}
+}
 
-Editar producto
-PUT /productos/editar/{id}
-Body: igual al crear
+Obtener todos (lista)(GET)
+http://localhost:8080/productos
 
-Eliminar producto
-DELETE /productos/eliminar/{id}
+Obtener por id(GET)
+ http://localhost:8080/productos/{id}
 
-Paginado básico (por defecto nombre asc)
-GET /productos/pageable?page=0&size=5
+Editar producto(PUT)
+http://localhost:8080/productos/editar/{id}
 
-Paginado genérico con orden
-GET /productos/pageable/order?page=0&size=5&sortBy=precio&direction=desc
+Eliminar producto(DELETE)
+ http://localhost:8080/productos/eliminar/{id}
 
-Orden por nombre (asc / desc)
-GET /productos/pageable/ordername/asc?page=0&size=5
-GET /productos/pageable/ordername/desc?page=0&size=5
+Paginado básico (por defecto nombre asc)(GET)
+http://localhost:8080/productos/pageable/ordername/asc/productos/pageable?page=0&size=5
 
-Buscar por nombre y/o marca (case-insensitive)
-GET /productos/buscar?nombre=zapatilla&marca=MarcaX
+Paginado genérico con orden(GET)
+http://localhost:8080/productos/pageable/order?page=0&size=5&sortBy=precio&direction=desc
+
+Orden por nombre (asc / desc) (GET)
+http://localhost:8080/productos/pageable/ordername/asc?page=0&size=5
+http://localhost:8080/productos/pageable/ordername/desc?page=0&size=5
+
+Buscar por nombre y/o marca (case-insensitive)(GET)
+http://localhost:8080/productos/buscar?nombre=zapatilla&marca=Nike
 (ambos params opcionales)
 
-Filtrar por rango de precio
-GET /productos/filtrar/precio?min=50&max=200
+Filtrar por rango de precio(GET)
+http://localhost:8080/productos/filtrar/precio?min=50&max=200
 
-Productos con stock bajo
-GET /productos/stock/bajo?limite=5 (default limite=5)
+Productos con stock bajo(GET)
+http://localhost:8080/productos/stock/bajo?limite=5 (default limite=5)
 
-Cantidad total de productos
-GET /productos/count
+Cantidad total de productos(GET)
+http://localhost:8080/productos/count
 
-Precio promedio
-GET /productos/precio/promedio
+Precio promedio(GET)
+http://localhost:8080/productos/precio/promedio
+
+----------------------------
+
+CLIENTES
+
+ObtenerTodosLosClientes(GET)
+http://localhost:8080/clientes/todos
+
+CrearCliente(GET)
+http://localhost:8080/clientes/crear
+(@GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;) --- SE GENERA CUANDO SE CREA EL OBJETO POR ESO NO APARECE EN EL JSON
+{
+    "nombre":"Josema",
+    "apellido":"Martinez",
+    "dni": "22331021",
+    "metodoPago": "MERCADOPAGO"
+
+}
+
+EditarClientes(PUT)
+http://localhost:8080/clientes/editar/1
+
+EliminarxId(DELETE)
+http://localhost:8080/clientes/eliminar/1
+
+----------------------------------------
+
+VENTAS
+
+obtenerVentas(GET)
+http://localhost:8080/ventas
+
+CrearVenta(POST)
+http://localhost:8080/ventas/crear
+(@GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;) --- SE GENERA CUANDO SE CREA EL OBJETO POR ESO NO APARECE EN EL JSON
+//Tambien la fecha se genera cuando se crea el objeto en la base de datos.
+
+   {
+        "clienteId": 10,
+        "productoIds": [20, 1]
+    }
+
+Obtener x ID(GET)
+http://localhost:8080/ventas/1
+
+EditarVentaXId(PUT)
+http://localhost:8080/ventas/editar/{codigoVenta}
+
+EliminarVentaxId(DELETE)
+http://localhost:8080/ventas/{id}
+
+Ventas por Cliente(GET)
+http://localhost:8080/ventas/cliente/1
+
+Ventas por rango de fechas(GET)
+http://localhost:8080/ventas/rango?desde=2025-09-01&hasta=2025-09-03
+
+Cantidad total de ventas(GET)
+http://localhost:8080/ventas/count
+
+Promedio de Ventas(GET)
+http://localhost:8080/ventas/promedio
+
+Promedios de Ventas por mes (GET)
+http://localhost:8080/ventas/reportes/promedio-mes
+
+Cliente con mayor gasto en el mes(GET)
+http://localhost:8080/ventas/reportes/cliente-mas-gasto?mes=9
+
+
+----------------------------------
+
+PROVEDORES
+
+CrearProveedor(POST)
+http://localhost:8080/proveedores
+(@GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;) --- SE GENERA CUANDO SE CREA EL OBJETO POR ESO NO APARECE EN EL JSON
+{
+  "razonSocial": "Distribuidora Tecnológica S.A.",
+  "direccion": "Av. Siempre Viva 742",
+  "telefono": "1122334455",
+  "cuitRuc": "30-12345678-9",
+  "email": "contacto@dtecnologica.com",
+  "tipoDeProductos": "Electrónicos",
+  "metodoPago": "Transferencia bancaria",
+  "diasDeEntrega": "Lunes, Miércoles, Viernes",
+  "plazosDePago": "30 días"
+}
+
+Obtener por id (GET)
+http://localhost:8080/proveedores/1
+
+
+Provedores Ordenados Por Razon Social ASC(GET)
+http://localhost:8080/proveedores/pageable?page=0&size=5&sort=razonSocial,asc
+
+Provedores Ordenados Por Cuit_RUC(GET)
+http://localhost:8080/proveedores/pageable?page=0&size=5&sort=cuitRuc,asc
+
+Editar proveedores(PUT)
+http://localhost:8080/proveedores/1
+
+Eliminar proveedores(DELETE)
+http://localhost:8080/proveedores/1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

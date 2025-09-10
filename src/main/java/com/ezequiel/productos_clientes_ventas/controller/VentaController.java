@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/ventas")
-@RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:5000")
 public class VentaController {
 
     @Autowired

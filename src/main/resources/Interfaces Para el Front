@@ -1,0 +1,73 @@
+// ----- Productos -----
+export interface Producto {
+  id: number;
+  nombre: string;
+  marca: string;
+  costo: number;
+  stock: number;
+}
+
+export interface ProductoRequest {
+  nombre: string;
+  marca: string;
+  costo: number;
+  stock: number;
+}
+
+// ----- Clientes -----
+export type MetodoPago = "EFECTIVO" | "TRANSFERENCIA" | "TARJETA" | "OTRO";
+
+export interface Cliente {
+  id: number;
+  nombre: string;
+  apellido: string;
+  dni: string;
+  metodoPago: MetodoPago;
+}
+
+export interface ClienteRequest {
+  nombre: string;
+  apellido: string;
+  dni: string;
+  metodoPago: MetodoPago;
+}
+
+// ----- Proveedores -----
+export interface Proveedor {
+  id: number;
+  razonSocial: string;
+  direccion: string;
+  telefono: string;
+  cuitRuc?: string;
+  email?: string;
+  tipoDeProductos?: string;
+  metodoPago?: string;
+  diasDeEntrega?: string;
+  plazosDePago?: string;
+}
+
+export interface ProveedorRequest
+  extends Omit<Proveedor, "id"> {}
+
+// ----- Ventas -----
+export interface Venta {
+  id: number;
+  fechaVenta: string; // ISO
+  clienteId: number;
+  productoIds: number[];
+}
+
+export interface VentaRequest {
+  fechaVenta: string; // ISO (LocalDate en back)
+  clienteId: number;
+  productoIds: number[];
+}
+
+// Util paginado
+export interface Page<T> {
+  content: T[];
+  totalElements: number;
+  totalPages: number;
+  size: number;
+  number: number; // page index
+}

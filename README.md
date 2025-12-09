@@ -115,7 +115,6 @@ Dentro de ->  src/main/resources/Scripts
 Estan los script para insertar en el Brench para poder probar por Postman los endpoints.
 
 
-🚀 Futuras Mejoras
 
 🔑 Autenticación JWT + roles (ADMIN, EMPLEADO, CLIENTE)
 🌐 Deploy en Railway/Render para consumo directo desde frontend
